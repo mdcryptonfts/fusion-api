@@ -83,9 +83,7 @@ app.get('/lswax-supply', async (req, res) => {
 
             const selectResult = await postgresClient.query(queryString);
 
-            res.json({
-                data: {result: selectResult.rows[0]?.lswax_supply}
-            });
+            res.json({ result: selectResult.rows[0]?.lswax_supply });
 
         } catch (e) {
             console.log(e);
